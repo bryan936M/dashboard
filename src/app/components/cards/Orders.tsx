@@ -1,6 +1,7 @@
+"use client";
 import Image from "next/image";
 import React from "react";
-import my_profile_image from "../../../public/my_profile_image.jpg";
+import my_profile_image from "../../../../public/my_profile_image.jpg";
 
 type Props = {};
 
@@ -26,9 +27,9 @@ const Orders = (props: Props) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"
               />
             </svg>
@@ -48,8 +49,8 @@ const Orders = (props: Props) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeWidth="3"
                 d="M6 12h.01m6 0h.01m5.99 0h.01"
               />
             </svg>

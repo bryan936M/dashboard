@@ -23,17 +23,17 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className=''>
+      <body className="">
         <button
           data-drawer-target="default-sidebar"
           data-drawer-toggle="default-sidebar"
           aria-controls="default-sidebar"
           type="button"
           className={`inline-flex lg:hidden items-center p-2 mt-2 ml-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 ${
-            clicked ? 'ml-64' : ''
+            clicked ? "ml-64" : ""
           }`}
           onClick={handleClick}
-          >
+        >
           <span className="sr-only">Open sidebar</span>
           <svg
             className="w-6 h-6"
@@ -43,8 +43,8 @@ export default function RootLayout({
             xmlns="http://www.w3.org/2000/svg"
           >
             <path
-              clip-rule="evenodd"
-              fill-rule="evenodd"
+              clipRule="evenodd"
+              fillRule="evenodd"
               d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
             ></path>
           </svg>
@@ -92,9 +92,9 @@ export default function RootLayout({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4zm2 6a1 1 0 011-1h6a1 1 0 110 2H7a1 1 0 01-1-1zm1 3a1 1 0 100 2h6a1 1 0 100-2H7z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                   <span className="flex-1 text-sm ml-3 text-left whitespace-nowrap">
@@ -108,9 +108,9 @@ export default function RootLayout({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -156,9 +156,9 @@ export default function RootLayout({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                   <span className="ml-3">Key Metrics</span>
@@ -182,9 +182,9 @@ export default function RootLayout({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                   <span className="flex-1 ml-3 text-left whitespace-nowrap">
@@ -198,9 +198,9 @@ export default function RootLayout({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -210,7 +210,7 @@ export default function RootLayout({
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-100 hover:text-black  rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
-                      Sign In
+                      Sales Report
                     </a>
                   </li>
                   <li>
@@ -218,7 +218,7 @@ export default function RootLayout({
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-100 hover:text-black  rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
-                      Sign Up
+                      User Metrics
                     </a>
                   </li>
                   <li>
@@ -226,7 +226,7 @@ export default function RootLayout({
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-100 hover:text-black  rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
-                      Forgot Password
+                      Portal Documentation
                     </a>
                   </li>
                 </ul>
@@ -248,9 +248,9 @@ export default function RootLayout({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                   <span className="flex-1 ml-3 text-left whitespace-nowrap">
@@ -264,9 +264,9 @@ export default function RootLayout({
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      fill-rule="evenodd"
+                      fillRule="evenodd"
                       d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
+                      clipRule="evenodd"
                     ></path>
                   </svg>
                 </button>
@@ -276,7 +276,7 @@ export default function RootLayout({
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-100 hover:text-black  rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
-                      Sign In
+                      All Analytics
                     </a>
                   </li>
                   <li>
@@ -284,7 +284,7 @@ export default function RootLayout({
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-100 hover:text-black  rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
-                      Sign Up
+                      Favorites
                     </a>
                   </li>
                   <li>
@@ -292,7 +292,7 @@ export default function RootLayout({
                       href="#"
                       className="flex items-center p-2 pl-11 w-full text-base font-normal text-gray-100 hover:text-black  rounded-lg transition duration-75 group hover:bg-gray-100 dark:text-white dark:hover:bg-gray-700"
                     >
-                      Forgot Password
+                      New Analytics
                     </a>
                   </li>
                 </ul>
@@ -356,9 +356,9 @@ export default function RootLayout({
                 >
                   <path
                     stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M19 12H5m14 0-4 4m4-4-4-4"
                   />
                 </svg>

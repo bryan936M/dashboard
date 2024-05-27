@@ -1,121 +1,9 @@
-// import React from "react";
-// import {
-//   BarChart,
-//   Bar,
-//   XAxis,
-//   YAxis,
-//   CartesianGrid,
-//   Tooltip,
-//   Legend,
-// } from "recharts";
-
-// const data = [
-//   {
-//     name: "January",
-//     uv: 4000,
-//     pv: 2400,
-//     amt: 2400,
-//   },
-//   {
-//     name: "February",
-//     uv: 3000,
-//     pv: 1398,
-//     amt: 2210,
-//   },
-//   {
-//     name: "March",
-//     uv: 2000,
-//     pv: 9800,
-//     amt: 2290,
-//   },
-//   {
-//     name: "April",
-//     uv: 2780,
-//     pv: 3908,
-//     amt: 2000,
-//   },
-//   {
-//     name: "May",
-//     uv: 1890,
-//     pv: 4800,
-//     amt: 2181,
-//   },
-//   {
-//     name: "June",
-//     uv: 2390,
-//     pv: 3800,
-//     amt: 2500,
-//   },
-//   {
-//     name: "July",
-//     uv: 3490,
-//     pv: 4300,
-//     amt: 2100,
-//   },
-//   {
-//     name: "August",
-//     uv: 3490,
-//     pv: 4300,
-//     amt: 2100,
-//   },
-//   {
-//     name: "September",
-//     uv: 3490,
-//     pv: 4300,
-//     amt: 2100,
-//   },
-//   {
-//     name: "October",
-//     uv: 3490,
-//     pv: 4300,
-//     amt: 2100,
-//   },
-//   {
-//     name: "November",
-//     uv: 3490,
-//     pv: 4300,
-//     amt: 2100,
-//   },
-//   {
-//     name: "December",
-//     uv: 3490,
-//     pv: 4300,
-//     amt: 2100,
-//   },
-// ];
-
-// const renderBarChart = (
-//   <BarChart
-//     width={500}
-//     height={300}
-//     data={data}
-//     margin={{
-//       top: 5,
-//       right: 30,
-//       left: 20,
-//       bottom: 5,
-//     }}
-//   >
-//     <XAxis dataKey="name" />
-//     <Bar dataKey="pv" fill="#8884d8" />
-//     <Bar dataKey="uv" fill="#82ca9d" />
-//   </BarChart>
-// );
-
-// type Props = {};
-
-// const Sales = (props: Props) => {
-//   return (
-//     <div className="block max-w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
-//       {renderBarChart}
-//     </div>
-//   );
-// };
-
-// export default Sales;
-
-import ApexCharts from "apexcharts";
-import React, { useEffect, useState } from "react";
+"use client";
+// import ApexCharts from "apexcharts";
+import React, { useState } from "react";
+import { ApexOptions } from "apexcharts";
+import dynamic from "next/dynamic";
+const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 type Props = {};
 
@@ -126,8 +14,29 @@ const Sales = (props: Props) => {
     setActiveButton(button);
   };
 
-  useEffect(() => {
-    const options = {
+  const [state, setState] = useState({
+    series: [
+      {
+        name: "Organic",
+        color: "#1A56DB",
+        data: [
+          { x: "Mon", y: 231 },
+          { x: "Jan", y: 122 },
+          { x: "Feb", y: 63 },
+          { x: "Mar", y: 421 },
+          { x: "Apr", y: 122 },
+          { x: "May", y: 323 },
+          { x: "Jun", y: 111 },
+          { x: "Jul", y: 131 },
+          { x: "Aug", y: 211 },
+          { x: "Sept", y: 114 },
+          { x: "Oct", y: 151 },
+          { x: "Nov", y: 611 },
+          { x: "Dec", y: 117 },
+        ],
+      },
+    ],
+    options: {
       colors: ["#1A56DB", "#FDBA8C"],
       series: [
         {
@@ -223,19 +132,8 @@ const Sales = (props: Props) => {
       fill: {
         opacity: 1,
       },
-    };
-
-    if (
-      document.getElementById("column-chart") &&
-      typeof ApexCharts !== "undefined"
-    ) {
-      const chart = new ApexCharts(
-        document.getElementById("column-chart"),
-        options
-      );
-      chart.render();
-    }
-  }, []);
+    } as ApexOptions,
+  });
 
   return (
     <div className="min-w-full bg-white rounded-lg shadow dark:bg-gray-800 p-4 md:p-6">
@@ -258,9 +156,9 @@ const Sales = (props: Props) => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"
                 />
               </svg>
@@ -280,8 +178,8 @@ const Sales = (props: Props) => {
               >
                 <path
                   stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-width="3"
+                  strokeLinecap="round"
+                  strokeWidth="3"
                   d="M6 12h.01m6 0h.01m5.99 0h.01"
                 />
               </svg>
@@ -354,9 +252,9 @@ const Sales = (props: Props) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"
               />
             </svg>
@@ -376,8 +274,8 @@ const Sales = (props: Props) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeWidth="3"
                 d="M6 12h.01m6 0h.01m5.99 0h.01"
               />
             </svg>
@@ -390,7 +288,13 @@ const Sales = (props: Props) => {
         <p className="font-bold text-3xl">$ 38,500</p>
       </div>
 
-      <div className="w-full" id="column-chart"></div>
+      <ApexCharts
+        type="bar"
+        options={state.options}
+        series={state.series}
+        height={320}
+        width="100%"
+      />
     </div>
   );
 };

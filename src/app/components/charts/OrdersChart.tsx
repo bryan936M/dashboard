@@ -1,80 +1,71 @@
-import React, { useEffect } from "react";
-import ApexCharts from "apexcharts";
+"use client";
+import React from "react";
+import dynamic from "next/dynamic";
+import { ApexOptions } from "apexcharts";
+const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 type Props = {};
 
 const OrdersChart = (props: Props) => {
-  useEffect(() => {
-    const getChartOptions = () => {
-      return {
-        series: [90, 85, 70],
-        colors: ["#1C64F2", "#16BDCA", "#FDBA8C"],
-        chart: {
-          height: "380px",
-          width: "100%",
-          type: "radialBar",
-          sparkline: {
-            enabled: true,
-          },
-        },
-        plotOptions: {
-          radialBar: {
-            track: {
-              background: "#E5E7EB",
-            },
-            dataLabels: {
-              show: false,
-            },
-            hollow: {
-              margin: 0,
-              size: "32%",
-            },
-          },
-        },
-        grid: {
-          show: false,
-          strokeDashArray: 4,
-          padding: {
-            left: 2,
-            right: 2,
-            top: -23,
-            bottom: -20,
-          },
-        },
-        labels: ["Done", "In progress", "Waiting"],
-        legend: {
-          show: true,
-          position: "bottom",
-          fontFamily: "Inter, sans-serif",
-        },
-        tooltip: {
+  const [state, setState] = React.useState({
+    series: [90, 85, 70],
+    options: {
+      series: [90, 85, 70],
+      colors: ["#1C64F2", "#16BDCA", "#FDBA8C"],
+      chart: {
+        height: "380px",
+        width: "100%",
+        type: "radialBar",
+        sparkline: {
           enabled: true,
-          x: {
+        },
+      },
+      plotOptions: {
+        radialBar: {
+          track: {
+            background: "#E5E7EB",
+          },
+          dataLabels: {
             show: false,
           },
-        },
-        yaxis: {
-          show: false,
-          labels: {
-            formatter: function (value: any) {
-              return value + "%";
-            },
+          hollow: {
+            margin: 0,
+            size: "32%",
           },
         },
-      };
-    };
-
-    if (
-      document.getElementById("radial-chart") &&
-      typeof ApexCharts !== "undefined"
-    ) {
-      const chart = new ApexCharts(
-        document.querySelector("#radial-chart"),
-        getChartOptions()
-      );
-      chart.render();
-    }
-  }, []);
+      },
+      grid: {
+        show: false,
+        strokeDashArray: 4,
+        padding: {
+          left: 2,
+          right: 2,
+          top: -23,
+          bottom: -20,
+        },
+      },
+      labels: ["Done", "In progress", "Waiting"],
+      legend: {
+        show: true,
+        position: "bottom",
+        fontFamily: "Inter, sans-serif",
+      },
+      tooltip: {
+        enabled: true,
+        x: {
+          show: false,
+        },
+      },
+      yaxis: {
+        show: false,
+        labels: {
+          formatter: function (value: any) {
+            return value + "%";
+          },
+        },
+      },
+    } as ApexOptions,
+  });
 
   return (
     <div className='class="block w-full p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"'>
@@ -96,9 +87,9 @@ const OrdersChart = (props: Props) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
                 d="M12 13V4M7 14H5a1 1 0 0 0-1 1v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4a1 1 0 0 0-1-1h-2m-1-5-4 5-4-5m9 8h.01"
               />
             </svg>
@@ -118,8 +109,8 @@ const OrdersChart = (props: Props) => {
             >
               <path
                 stroke="currentColor"
-                stroke-linecap="round"
-                stroke-width="3"
+                strokeLinecap="round"
+                strokeWidth="3"
                 d="M6 12h.01m6 0h.01m5.99 0h.01"
               />
             </svg>
@@ -127,7 +118,13 @@ const OrdersChart = (props: Props) => {
         </div>
       </div>
 
-      <div className="py-6" id="radial-chart"></div>
+      <ApexCharts
+        type="radialBar"
+        options={state.options}
+        series={state.series}
+        height={380}
+        width="100%"
+      />
     </div>
   );
 };
